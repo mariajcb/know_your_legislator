@@ -1,0 +1,39 @@
+body {
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.navbar-fixed {
+  margin-bottom: 15px;
+}
+
+.nav-wrapper {
+    background-color: #93BAB9;
+}
+
+footer.page-footer {
+    background-color: #93BAB9;
+}
+
+button.btn-large.waves-effect.waves-light {
+    background-color: #B8E7E2;
+}
+
+.poster {
+  height: 380px;
+  max-width: 100%;
+}
+
+#api {
+  text-decoration: underline;
+}
+
+.slider .indicators .indicator-item.active {
+    display: none;
+}

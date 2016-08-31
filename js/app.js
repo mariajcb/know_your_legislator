@@ -10,7 +10,7 @@
         $('#people').empty();
 
         for (let legislator of legislators) {
-            let $col = $('<div class="col s6">');
+            let $col = $('<div class="col s12 m6 l6">');
             let $card = $('<div class="card hoverable">');
             let $content = $('<div class="card-content center">');
             let $name = $('<h6 class="card-title truncate">');
@@ -32,12 +32,13 @@
               alt: `${legislator.photo} Photograph`
             });
 
+            var $id = $('<h6>').text(`ID: ${legislator.id}`)
             var $state = $('<h6>').text(`State: ${legislator.state.toUpperCase()}`);
             var $district = $('<h6>').text(`District: ${legislator.district}`);
             var $chamber = $('<h6>').text(`Chamber: ${legislator.chamber}`);
             var $party = $('<h6>').text(`Party: ${legislator.party}`);
 
-            $content.append($name, $photo, $state, $district, $chamber, $party);
+            $content.append($name, $photo, $id, $state, $district, $chamber, $party);
             $card.append($content);
 
             let $action = $('<div class="card-action center">');
@@ -52,10 +53,12 @@
           var $modal = $(`<div id="${legislator.id}" class="modal">`);
           var $modalContent = $('<div class="modal-content">');
           var $modalHeader = $('<h4>').text(legislator.name);
-          var $modalText = $('<p>').text(legislator.contact);
-          console.log(legislator.contact);
+          var $address = $('<p>').text(`Address: ${legislator.contact[0].address}`);
+          var $phone = $('<p>').text(`Phone: ${legislator.contact[0].phone}`);
+          let $email = $('<a class = "email">').text(legislator.contact[0].email);
+          $email.attr('href', `mailto: ${legislator.contact[0].email}`)
 
-          $modalContent.append($modalHeader, $modalText);
+          $modalContent.append($modalHeader, $address, $phone, $email);
           $modal.append($modalContent);
 
           $col.append($card, $modal);
@@ -68,6 +71,7 @@
 
     $('form').submit(function() {
         event.preventDefault();
+        legislators = [];
         let search = $('#search').val();
         if (search.length == 0) {
             Materialize.toast('Please enter a location!', 3000);

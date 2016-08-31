@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Lato', sans-serif;
 }
 
 main {
@@ -14,21 +15,24 @@ main {
 }
 
 .nav-wrapper {
-    background-color: #93BAB9;
+    background-color: #f5f5f5;
+}
+
+a.brand-logo {
+  color: #6E6E6E;
+  font-family: 'Belleza', sans-serif;
 }
 
 footer.page-footer {
-    background-color: #93BAB9;
+    background-color: #6E6E6E;
 }
 
 button.btn-large.waves-effect.waves-light {
     background-color: #B8E7E2;
+    color: #6E6E6E;
+    font-weight: bold;
 }
 
-.poster {
-  height: 380px;
-  max-width: 100%;
-}
 
 #api {
   text-decoration: underline;
@@ -36,4 +40,32 @@ button.btn-large.waves-effect.waves-light {
 
 .slider .indicators .indicator-item.active {
     display: none;
+}
+
+.slider {
+  width: 100%;
+}
+
+input#search {
+  width: 50%;
+}
+
+a {
+  color: #2bbbad;
+}
+
+.btn {
+  background-color: #93BAB9;
+}
+
+.card {
+  color: #6E6E6E;
+}
+
+.modal-content {
+  color: #6E6E6E;
+}
+
+a:hover {
+  color: #93BAB9;
 }

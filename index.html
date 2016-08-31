@@ -4,43 +4,47 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Know Your Legislator</title>
+    <title>Know Your State Legislator</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="css/materialize.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Belleza|Lato" rel="stylesheet">
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <div class="container">
-                    <a href="index.html" class="brand-logo center">
-                        <i class="material-icons left">people_outline</i> Know Your Legislator
-                    </a>
-                </div>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="index.html" class="brand-logo center">
+                    <i class="material-icons left">people_outline</i> Know Your State Legislator
+                </a>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="https://hd.unsplash.com/photo-1467251589161-f9c68fa14c59">
-                <div class="caption center-align">
-                    <form>
-                        <input type="text" placeholder="Enter your location" id="search" name="search" />
-                        <button class="btn-large waves-effect waves-light" type="submit" name="action">
-                            <i class="material-icons right">search</i> Search
-                        </button>
-                    </form>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <main>
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="https://hd.unsplash.com/photo-1467251589161-f9c68fa14c59">
+                    <div class="caption center-align">
+                        <form autocomplete="off">
+                            <input type="text" placeholder="CITY AND STATE" id="search" name="search" />
+                            <div>
+                                <button class="btn-large waves-effect waves-light" type="submit" name="action">
+                                    <i class="material-icons right">search</i> Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    <div id="people" class="row"></div>
+        <div class="container">
+            <div id="people" class="row"></div>
+        </div>
     </main>
 
     <footer class="page-footer">
@@ -49,7 +53,7 @@
                 <div class="col s12">
                     <h5 class="grey-text text-lighten-4">
             <i class="material-icons left">people</i>
-            Know Your Legislator
+            Know Your State Legislator
           </h5>
 
                     <p class="grey-text text-lighten-4">
@@ -64,7 +68,7 @@
 
         <div class="footer-copyright">
             <div class="container">
-                © 2016 Know Your Legislator
+                © 2016 Know Your State Legislator
             </div>
         </div>
     </footer>
@@ -74,4 +78,5 @@
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/app.js"></script>
+
 </html>

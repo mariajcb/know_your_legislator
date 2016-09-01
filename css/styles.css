@@ -33,7 +33,6 @@ button.btn-large.waves-effect.waves-light {
     font-weight: bold;
 }
 
-
 #api {
   text-decoration: underline;
 }
@@ -68,4 +67,10 @@ a {
 
 a:hover {
   color: #93BAB9;
+}
+
+@media only screen and (max-width: 500px) {
+  a.brand-logo {
+    font-size: 1.5em;
+  }
 }

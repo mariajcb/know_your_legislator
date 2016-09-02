@@ -1,4 +1,4 @@
-(function() {
+$(document).ready(function() {
     'use strict';
     $('.slider').slider({
         height: '600px',
@@ -29,8 +29,8 @@
             let $photo = $('<img class = "photo">');
 
             $photo.attr({
-              src: legislator.photo,
-              alt: `${legislator.photo} Photograph`
+                src: legislator.photo,
+                alt: `${legislator.photo} Photograph`
             });
 
             var $id = $('<h6>').text(`ID: ${legislator.id}`)
@@ -51,22 +51,22 @@
             $action.append($contact);
             $card.append($action);
 
-          var $modal = $(`<div id="${legislator.id}" class="modal">`);
-          var $modalContent = $('<div class="modal-content">');
-          var $modalHeader = $('<h4>').text(legislator.name);
-          var $address = $('<p>').text(`Address: ${legislator.contact[0].address}`);
-          var $phone = $('<p>').text(`Phone: ${legislator.contact[0].phone}`);
-          let $email = $('<a class = "email">').text(legislator.contact[0].email);
-          $email.attr('href', `mailto: ${legislator.contact[0].email}`)
+            var $modal = $(`<div id="${legislator.id}" class="modal">`);
+            var $modalContent = $('<div class="modal-content">');
+            var $modalHeader = $('<h4>').text(legislator.name);
+            var $address = $('<p>').text(`Address: ${legislator.contact[0].address}`);
+            var $phone = $('<p>').text(`Phone: ${legislator.contact[0].phone}`);
+            let $email = $('<a class = "email">').text(legislator.contact[0].email);
+            $email.attr('href', `mailto: ${legislator.contact[0].email}`)
 
-          $modalContent.append($modalHeader, $address, $phone, $email);
-          $modal.append($modalContent);
+            $modalContent.append($modalHeader, $address, $phone, $email);
+            $modal.append($modalContent);
 
-          $col.append($card, $modal);
+            $col.append($card, $modal);
 
-          $('#people').append($col);
+            $('#people').append($col);
 
-          $('.modal-trigger').leanModal();
+            $('.modal-trigger').leanModal();
         }
     }
 

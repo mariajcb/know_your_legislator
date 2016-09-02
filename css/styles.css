@@ -1,17 +1,17 @@
 body {
-  background: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Lato', sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
 }
 
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 .navbar-fixed {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .nav-wrapper {
@@ -19,7 +19,7 @@ main {
 }
 
 h4 {
-  font-family: 'Belleza', sans-serif;
+    font-family: 'Belleza', sans-serif;
 }
 
 footer.page-footer {
@@ -33,7 +33,7 @@ button.btn-large.waves-effect.waves-light {
 }
 
 #api {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .slider .indicators .indicator-item.active {
@@ -41,39 +41,43 @@ button.btn-large.waves-effect.waves-light {
 }
 
 .slider {
-  width: 100%;
+    width: 100%;
 }
 
 input#search {
-  width: 50%;
-  text-align: right;
-  padding-top: 5%;
+    width: 50%;
+    text-align: right;
+    padding-top: 5%;
 }
 
 a {
-  color: #2bbbad;
+    color: #2bbbad;
 }
 
 .btn {
-  background-color: #93BAB9;
+    background-color: #93BAB9;
 }
 
 .card {
-  color: #6E6E6E;
+    color: #6E6E6E;
 }
 
 .modal-content {
-  color: #6E6E6E;
+    color: #6E6E6E;
 }
 
 a:hover {
-  color: #93BAB9;
+    color: #93BAB9;
 }
 
 .slider {
-  height: 600px;
+    height: 600px;
 }
 
-main.container {
-  padding-top: 3%;
+#people {
+    padding-top: 5%;
+}
+
+h5 {
+    font-size: 1.4em;
 }

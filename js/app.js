@@ -1,6 +1,7 @@
 (function() {
     'use strict';
     $('.slider').slider({
+        height: '600px',
         full_width: true
     });
 
@@ -43,18 +44,14 @@
 
             let $action = $('<div class="card-action center">');
             let $contact = $('<a class="waves-effect waves-light btn modal-trigger">');
-            let $bills = $('<a class="waves-effect waves-light btn modal-trigger">');
 
-            $contact.attr('href', `contact-#${legislator.id}`);
+            $contact.attr('href', `#${legislator.id}`);
             $contact.text('Contact');
 
-            $bills.attr('href', `bills-#${legislator.id}`);
-            $bills.text('See Bills');
-
-            $action.append($contact, $bills);
+            $action.append($contact);
             $card.append($action);
 
-          var $modal = $(`<div id="contact-${legislator.id}" class="modal">`);
+          var $modal = $(`<div id="${legislator.id}" class="modal">`);
           var $modalContent = $('<div class="modal-content">');
           var $modalHeader = $('<h4>').text(legislator.name);
           var $address = $('<p>').text(`Address: ${legislator.contact[0].address}`);
@@ -72,39 +69,6 @@
           $('.modal-trigger').leanModal();
         }
     }
-
-    // function renderBills() {
-    //
-    //               let $action = $('<div class="card-action center">');
-    //               let $contact = $('<a class="waves-effect waves-light btn modal-trigger">');
-    //               let $bills = $('<a class="waves-effect waves-light btn modal-trigger">');
-    //
-    //               $contact.attr('href', `contact-#${legislator.id}`);
-    //               $contact.text('Contact');
-    //
-    //               $bills.attr('href', `bills-#${legislator.id}`);
-    //               $bills.text('See Bills');
-    //
-    //               $action.append($contact, $bills);
-    //               $card.append($action);
-    //
-    //             var $modal = $(`<div id="contact-${legislator.id}" class="modal">`);
-    //             var $modalContent = $('<div class="modal-content">');
-    //             var $modalHeader = $('<h4>').text(legislator.name);
-    //             var $address = $('<p>').text(`Address: ${legislator.contact[0].address}`);
-    //             var $phone = $('<p>').text(`Phone: ${legislator.contact[0].phone}`);
-    //             let $email = $('<a class = "email">').text(legislator.contact[0].email);
-    //             $email.attr('href', `mailto: ${legislator.contact[0].email}`)
-    //
-    //             $modalContent.append($modalHeader, $address, $phone, $email);
-    //             $modal.append($modalContent);
-    //
-    //             $col.append($card, $modal);
-    //
-    //             $('#people').append($col);
-    //
-    //             $('.modal-trigger').leanModal();
-    // }
 
     $('form').submit(function() {
         event.preventDefault();
@@ -138,8 +102,6 @@
                                             'chamber': person.chamber,
                                             'contact': person.offices,
                                         })
-                                        // here get bill info for one person
-                                        getBills(person)
                                     }
                                     renderPeople();
                                 }
@@ -148,26 +110,4 @@
                 })
         }
     })
-
-let bills = [];
-    function getBills(person) {
-      $.get(`https://openstates.org/api/v1//bills/?sponsor_id=${person.id}&updated_since=2016-03-09&apikey=7820472d4ec14d6eb316f1c4a0920ae4`)
-        .then(function(billsData){
-          if (billsData.Error) {
-              console.log(billsData.Err);
-          } else {
-            for (var i = 0; i < billsData.length; i++) {
-              let bill = billsData[i];
-              bills.push({
-                  'billTitle': bill.title,
-                  'billId': bill.bill_id,
-                  'date': bill.updated_at,
-              })
-              console.log(billsData);
-            }
-            // renderBills
-          }
-        })
-    }
-
 })();

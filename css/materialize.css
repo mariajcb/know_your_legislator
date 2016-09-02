@@ -7311,7 +7311,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider {
-  position: relative;
+  position: absolute;
   height: 400px;
   width: 100%;
 }
